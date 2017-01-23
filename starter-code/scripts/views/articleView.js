@@ -17,7 +17,8 @@
     return template(article);
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // done: What does this method do?  What is it's execution path?
+  //this method is filling in the article filter for authors. It sends a mapped array of Article.allAuthors (mapped by author) to the Handlebars compiler and then appends the output to the id of author-filter.
   articleView.populateFilters = function() {
     var options;
     var template = Handlebars.compile($('#option-template').text());
@@ -25,7 +26,8 @@
       .map(function(author) {
         return template({val: author});
       });
-    $('#author-filter').append(options);
+    $('#author-filter').appe]''/''''/'/'''''[[
+/d(options);
 
     Article.allCategories(function(rows) {
       $('#category-filter').append(
@@ -36,7 +38,8 @@
     });
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // :  done What does this method do?  What is it's execution path?
+ // This method is setting up an event handler that will fire once on change and then the url path using the page library method.   it's path is on event - jquery get this and put it all into a page call and replace url.
   articleView.handleFilters = function() {
     $('#filters').one('change', 'select', function() {
       var resource = this.id.replace('-filter', '');
@@ -85,7 +88,8 @@
      });
    }; */
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // done: What does this method do?  What is it's execution path?
+  // this function is showing the selected article and hiding all its siblings and then rendering it to the page.
   articleView.index = function(articles) {
     $('#articles').show().siblings().hide();
 
